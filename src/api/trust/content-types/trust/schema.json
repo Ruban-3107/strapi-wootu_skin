@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "trusts",
+  "info": {
+    "singularName": "trust",
+    "pluralName": "trusts",
+    "displayName": "Trust"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "text"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "reviews": {
+      "type": "string"
+    },
+    "doctor_answered": {
+      "type": "string"
+    },
+    "people_satisfactions": {
+      "type": "string"
+    }
+  }
+}

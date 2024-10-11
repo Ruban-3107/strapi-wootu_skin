@@ -485,6 +485,38 @@ export interface PluginUsersPermissionsUser
   };
 }
 
+export interface ApiCarouselCarousel extends Struct.CollectionTypeSchema {
+  collectionName: 'carousels';
+  info: {
+    singularName: 'carousel';
+    pluralName: 'carousels';
+    displayName: 'carousel';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    heading_text: Schema.Attribute.String;
+    text: Schema.Attribute.String;
+    image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::carousel.carousel'
+    >;
+  };
+}
+
 export interface ApiCarrerCarrer extends Struct.CollectionTypeSchema {
   collectionName: 'carrers';
   info: {
@@ -538,6 +570,36 @@ export interface ApiLandingPageLandingPage extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::landing-page.landing-page'
+    >;
+  };
+}
+
+export interface ApiTestimonialTestimonial extends Struct.CollectionTypeSchema {
+  collectionName: 'testimonials';
+  info: {
+    singularName: 'testimonial';
+    pluralName: 'testimonials';
+    displayName: 'Testimonial';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    message: Schema.Attribute.Text;
+    name: Schema.Attribute.String;
+    likes: Schema.Attribute.Integer;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::testimonial.testimonial'
     >;
   };
 }
@@ -598,6 +660,34 @@ export interface ApiTopServiceTopService extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::top-service.top-service'
     >;
+  };
+}
+
+export interface ApiTrustTrust extends Struct.CollectionTypeSchema {
+  collectionName: 'trusts';
+  info: {
+    singularName: 'trust';
+    pluralName: 'trusts';
+    displayName: 'Trust';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    reviews: Schema.Attribute.String;
+    doctor_answered: Schema.Attribute.String;
+    people_satisfactions: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::trust.trust'>;
   };
 }
 
@@ -976,10 +1066,13 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::carousel.carousel': ApiCarouselCarousel;
       'api::carrer.carrer': ApiCarrerCarrer;
       'api::landing-page.landing-page': ApiLandingPageLandingPage;
+      'api::testimonial.testimonial': ApiTestimonialTestimonial;
       'api::top-concern.top-concern': ApiTopConcernTopConcern;
       'api::top-service.top-service': ApiTopServiceTopService;
+      'api::trust.trust': ApiTrustTrust;
       'admin::permission': AdminPermission;
       'admin::user': AdminUser;
       'admin::role': AdminRole;
