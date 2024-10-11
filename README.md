@@ -1,0 +1,1 @@
+# strapi-wootu_skin
