@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "top_services",
+  "info": {
+    "singularName": "top-service",
+    "pluralName": "top-services",
+    "displayName": "Top Service"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}
