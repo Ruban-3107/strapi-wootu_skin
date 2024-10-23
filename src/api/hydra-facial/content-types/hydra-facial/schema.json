@@ -1,0 +1,63 @@
+{
+  "kind": "collectionType",
+  "collectionName": "hydra_facials",
+  "info": {
+    "singularName": "hydra-facial",
+    "pluralName": "hydra-facials",
+    "displayName": "hydra_facial"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero_section_header": {
+      "type": "string"
+    },
+    "hero_section_text": {
+      "type": "text"
+    },
+    "hero_section_image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "benefits_header": {
+      "type": "string"
+    },
+    "benefits_text": {
+      "type": "text"
+    },
+    "before_after_section_text": {
+      "type": "string"
+    },
+    "before_after_section_image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "video_section_text": {
+      "type": "string"
+    },
+    "video_section_videos": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

@@ -542,6 +542,120 @@ export interface ApiCarrerCarrer extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiChemicalPeelChemicalPeel
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'chemical_peels';
+  info: {
+    singularName: 'chemical-peel';
+    pluralName: 'chemical-peels';
+    displayName: 'chemical_peel';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    hero_section_header: Schema.Attribute.String;
+    hero_section_text: Schema.Attribute.Text;
+    hero_section_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    benefits_text: Schema.Attribute.Text;
+    benefits_header: Schema.Attribute.String;
+    before_after_section_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    before_after_section_text: Schema.Attribute.String;
+    video_section_text: Schema.Attribute.String;
+    video_section_videos: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::chemical-peel.chemical-peel'
+    >;
+  };
+}
+
+export interface ApiContactusContactus extends Struct.CollectionTypeSchema {
+  collectionName: 'contactuses';
+  info: {
+    singularName: 'contactus';
+    pluralName: 'contactuses';
+    displayName: 'contactus';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    text: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contactus.contactus'
+    >;
+  };
+}
+
+export interface ApiHydraFacialHydraFacial extends Struct.CollectionTypeSchema {
+  collectionName: 'hydra_facials';
+  info: {
+    singularName: 'hydra-facial';
+    pluralName: 'hydra-facials';
+    displayName: 'hydra_facial';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    hero_section_header: Schema.Attribute.String;
+    hero_section_text: Schema.Attribute.Text;
+    hero_section_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    benefits_header: Schema.Attribute.String;
+    benefits_text: Schema.Attribute.Text;
+    before_after_section_text: Schema.Attribute.String;
+    before_after_section_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    video_section_text: Schema.Attribute.String;
+    video_section_videos: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::hydra-facial.hydra-facial'
+    >;
+  };
+}
+
 export interface ApiLandingPageLandingPage extends Struct.CollectionTypeSchema {
   collectionName: 'landing_pages';
   info: {
@@ -1068,6 +1182,9 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::carousel.carousel': ApiCarouselCarousel;
       'api::carrer.carrer': ApiCarrerCarrer;
+      'api::chemical-peel.chemical-peel': ApiChemicalPeelChemicalPeel;
+      'api::contactus.contactus': ApiContactusContactus;
+      'api::hydra-facial.hydra-facial': ApiHydraFacialHydraFacial;
       'api::landing-page.landing-page': ApiLandingPageLandingPage;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
       'api::top-concern.top-concern': ApiTopConcernTopConcern;
