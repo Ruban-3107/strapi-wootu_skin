@@ -485,6 +485,34 @@ export interface PluginUsersPermissionsUser
   };
 }
 
+export interface ApiAboutusAboutus extends Struct.CollectionTypeSchema {
+  collectionName: 'aboutuses';
+  info: {
+    singularName: 'aboutus';
+    pluralName: 'aboutuses';
+    displayName: 'Aboutus';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
+    subheading: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::aboutus.aboutus'
+    >;
+  };
+}
+
 export interface ApiCarouselCarousel extends Struct.CollectionTypeSchema {
   collectionName: 'carousels';
   info: {
@@ -1066,6 +1094,7 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::aboutus.aboutus': ApiAboutusAboutus;
       'api::carousel.carousel': ApiCarouselCarousel;
       'api::carrer.carrer': ApiCarrerCarrer;
       'api::landing-page.landing-page': ApiLandingPageLandingPage;
