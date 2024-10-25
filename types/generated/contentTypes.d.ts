@@ -751,6 +751,7 @@ export interface ApiHydraFacialHydraFacial extends Struct.CollectionTypeSchema {
     singularName: 'hydra-facial';
     pluralName: 'hydra-facials';
     displayName: 'hydra_facial';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -772,6 +773,9 @@ export interface ApiHydraFacialHydraFacial extends Struct.CollectionTypeSchema {
     video_section_videos: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
+    >;
+    benefits_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
     >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;

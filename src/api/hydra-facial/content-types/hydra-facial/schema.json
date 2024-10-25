@@ -4,7 +4,8 @@
   "info": {
     "singularName": "hydra-facial",
     "pluralName": "hydra-facials",
-    "displayName": "hydra_facial"
+    "displayName": "hydra_facial",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,14 +19,15 @@
       "type": "text"
     },
     "hero_section_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "benefits_header": {
       "type": "string"
@@ -37,19 +39,31 @@
       "type": "string"
     },
     "before_after_section_image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "video_section_text": {
       "type": "string"
     },
     "video_section_videos": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "benefits_image": {
       "allowedTypes": [
         "images",
         "files",
@@ -57,7 +71,7 @@
         "audios"
       ],
       "type": "media",
-      "multiple": true
+      "multiple": false
     }
   }
 }
