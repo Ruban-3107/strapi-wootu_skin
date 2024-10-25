@@ -485,6 +485,49 @@ export interface PluginUsersPermissionsUser
   };
 }
 
+export interface ApiCarbonLaserCarbonLaser extends Struct.CollectionTypeSchema {
+  collectionName: 'carbon_lasers';
+  info: {
+    singularName: 'carbon-laser';
+    pluralName: 'carbon-lasers';
+    displayName: 'carbon_laser';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    hero_section_header: Schema.Attribute.String;
+    hero_section_text: Schema.Attribute.Text;
+    hero_section_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    benefits_text: Schema.Attribute.Text;
+    benefits_header: Schema.Attribute.String;
+    before_after_section_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    before_after_section_text: Schema.Attribute.String;
+    video_section_text: Schema.Attribute.String;
+    video_section_videos: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::carbon-laser.carbon-laser'
+    >;
+  };
+}
+
 export interface ApiCarouselCarousel extends Struct.CollectionTypeSchema {
   collectionName: 'carousels';
   info: {
@@ -586,6 +629,50 @@ export interface ApiChemicalPeelChemicalPeel
   };
 }
 
+export interface ApiCombinationsPeelCombinationsPeel
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'combinations_peels';
+  info: {
+    singularName: 'combinations-peel';
+    pluralName: 'combinations-peels';
+    displayName: 'combinations_peel';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    hero_section_header: Schema.Attribute.String;
+    hero_section_text: Schema.Attribute.Text;
+    hero_section_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    benefits_text: Schema.Attribute.Text;
+    benefits_header: Schema.Attribute.String;
+    before_after_section_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    before_after_section_text: Schema.Attribute.String;
+    video_section_text: Schema.Attribute.String;
+    video_section_videos: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::combinations-peel.combinations-peel'
+    >;
+  };
+}
+
 export interface ApiContactusContactus extends Struct.CollectionTypeSchema {
   collectionName: 'contactuses';
   info: {
@@ -609,6 +696,51 @@ export interface ApiContactusContactus extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::contactus.contactus'
+    >;
+  };
+}
+
+export interface ApiGlycolicPeelGlycolicPeel
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'glycolic_peels';
+  info: {
+    singularName: 'glycolic-peel';
+    pluralName: 'glycolic-peels';
+    displayName: 'Glycolic_peel';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    hero_section_header: Schema.Attribute.String;
+    hero_section_text: Schema.Attribute.Text;
+    hero_section_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    benefits_text: Schema.Attribute.Text;
+    benefits_header: Schema.Attribute.String;
+    before_after_section_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    before_after_section_text: Schema.Attribute.String;
+    video_section_text: Schema.Attribute.String;
+    video_section_videos: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::glycolic-peel.glycolic-peel'
     >;
   };
 }
@@ -684,6 +816,135 @@ export interface ApiLandingPageLandingPage extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::landing-page.landing-page'
+    >;
+  };
+}
+
+export interface ApiLightPeelLightPeel extends Struct.CollectionTypeSchema {
+  collectionName: 'light_peels';
+  info: {
+    singularName: 'light-peel';
+    pluralName: 'light-peels';
+    displayName: 'light_peel';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    hero_section_header: Schema.Attribute.String;
+    hero_section_text: Schema.Attribute.Text;
+    hero_section_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    benefits_text: Schema.Attribute.Text;
+    benefits_header: Schema.Attribute.String;
+    before_after_section_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    before_after_section_text: Schema.Attribute.String;
+    video_section_text: Schema.Attribute.String;
+    video_section_videos: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::light-peel.light-peel'
+    >;
+  };
+}
+
+export interface ApiNanoPeelNanoPeel extends Struct.CollectionTypeSchema {
+  collectionName: 'nano_peels';
+  info: {
+    singularName: 'nano-peel';
+    pluralName: 'nano-peels';
+    displayName: 'nano_peel';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    hero_section_header: Schema.Attribute.String;
+    hero_section_text: Schema.Attribute.Text;
+    hero_section_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    benefits_text: Schema.Attribute.Text;
+    benefits_header: Schema.Attribute.String;
+    before_after_section_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    before_after_section_text: Schema.Attribute.String;
+    video_section_text: Schema.Attribute.String;
+    video_section_videos: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::nano-peel.nano-peel'
+    >;
+  };
+}
+
+export interface ApiPhotoFacialPhotoFacial extends Struct.CollectionTypeSchema {
+  collectionName: 'photo_facials';
+  info: {
+    singularName: 'photo-facial';
+    pluralName: 'photo-facials';
+    displayName: 'photo_facial';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    hero_section_header: Schema.Attribute.String;
+    hero_section_text: Schema.Attribute.Text;
+    hero_section_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    benefits_text: Schema.Attribute.String;
+    benefits_header: Schema.Attribute.String;
+    before_after_section_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    before_after_section_text: Schema.Attribute.String;
+    video_section_text: Schema.Attribute.String;
+    video_section_videos: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::photo-facial.photo-facial'
     >;
   };
 }
@@ -802,6 +1063,49 @@ export interface ApiTrustTrust extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::trust.trust'>;
+  };
+}
+
+export interface ApiYellowPeelYellowPeel extends Struct.CollectionTypeSchema {
+  collectionName: 'yellow_peels';
+  info: {
+    singularName: 'yellow-peel';
+    pluralName: 'yellow-peels';
+    displayName: 'yellow_peel';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    hero_section_header: Schema.Attribute.String;
+    hero_section_text: Schema.Attribute.Text;
+    hero_section_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    benefits_text: Schema.Attribute.Text;
+    benefits_header: Schema.Attribute.String;
+    before_after_section_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    before_after_section_text: Schema.Attribute.String;
+    video_section_text: Schema.Attribute.String;
+    video_section_videos: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::yellow-peel.yellow-peel'
+    >;
   };
 }
 
@@ -1180,16 +1484,23 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::carbon-laser.carbon-laser': ApiCarbonLaserCarbonLaser;
       'api::carousel.carousel': ApiCarouselCarousel;
       'api::carrer.carrer': ApiCarrerCarrer;
       'api::chemical-peel.chemical-peel': ApiChemicalPeelChemicalPeel;
+      'api::combinations-peel.combinations-peel': ApiCombinationsPeelCombinationsPeel;
       'api::contactus.contactus': ApiContactusContactus;
+      'api::glycolic-peel.glycolic-peel': ApiGlycolicPeelGlycolicPeel;
       'api::hydra-facial.hydra-facial': ApiHydraFacialHydraFacial;
       'api::landing-page.landing-page': ApiLandingPageLandingPage;
+      'api::light-peel.light-peel': ApiLightPeelLightPeel;
+      'api::nano-peel.nano-peel': ApiNanoPeelNanoPeel;
+      'api::photo-facial.photo-facial': ApiPhotoFacialPhotoFacial;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
       'api::top-concern.top-concern': ApiTopConcernTopConcern;
       'api::top-service.top-service': ApiTopServiceTopService;
       'api::trust.trust': ApiTrustTrust;
+      'api::yellow-peel.yellow-peel': ApiYellowPeelYellowPeel;
       'admin::permission': AdminPermission;
       'admin::user': AdminUser;
       'admin::role': AdminRole;
