@@ -793,17 +793,17 @@ export interface ApiHydraFacialHydraFacial extends Struct.CollectionTypeSchema {
     benefits_header: Schema.Attribute.String;
     benefits_text: Schema.Attribute.Text;
     before_after_section_text: Schema.Attribute.String;
-    before_after_section_image: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
+    benefits_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
     >;
     video_section_text: Schema.Attribute.String;
     video_section_videos: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
     >;
-    benefits_image: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
+    before_after_carousel: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
     >;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;

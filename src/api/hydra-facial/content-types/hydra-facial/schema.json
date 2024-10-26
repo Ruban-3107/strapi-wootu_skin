@@ -38,9 +38,9 @@
     "before_after_section_text": {
       "type": "string"
     },
-    "before_after_section_image": {
+    "benefits_image": {
       "type": "media",
-      "multiple": true,
+      "multiple": false,
       "required": false,
       "allowedTypes": [
         "images",
@@ -63,15 +63,16 @@
         "audios"
       ]
     },
-    "benefits_image": {
+    "before_after_carousel": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }
