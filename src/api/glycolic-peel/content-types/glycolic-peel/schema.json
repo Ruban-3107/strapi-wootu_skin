@@ -4,7 +4,8 @@
   "info": {
     "singularName": "glycolic-peel",
     "pluralName": "glycolic-peels",
-    "displayName": "Glycolic_peel"
+    "displayName": "Glycolic_peel",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,14 +19,15 @@
       "type": "text"
     },
     "hero_section_image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "benefits_text": {
       "type": "text"
@@ -34,14 +36,15 @@
       "type": "string"
     },
     "before_after_section_image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "before_after_section_text": {
       "type": "string"
@@ -50,6 +53,17 @@
       "type": "string"
     },
     "video_section_videos": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "benefits_image": {
       "allowedTypes": [
         "images",
         "files",
@@ -57,7 +71,7 @@
         "audios"
       ],
       "type": "media",
-      "multiple": true
+      "multiple": false
     }
   }
 }

@@ -28,6 +28,9 @@
     },
     "hero_text_2": {
       "type": "string"
+    },
+    "contact_button": {
+      "type": "string"
     }
   }
 }
